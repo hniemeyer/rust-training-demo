@@ -15,6 +15,10 @@ impl Rectangle {
             width,
         }
     }
+
+    pub fn move_center(&mut self, point: Point) {
+        self.center = point;
+    }
 }
 
 impl traits::Shape<f32> for Rectangle {

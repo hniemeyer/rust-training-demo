@@ -1,30 +1,46 @@
 name: Rust (build, test)
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
 env:
   CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 10
+  CI: 1
+  RUST_BACKTRACE: short
+  RUSTFLAGS: "-D warnings -W unreachable-pub -W rust-2021-compatibility"
+  RUSTUP_MAX_RETRIES: 10
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Build
-        run: cargo build --verbose
-      - name: Run tests
-        run: cargo test --verbose
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+          components: rustfmt, rust-src
+      - name: Cache Dependencies
+        uses: Swatinem/rust-cache@v1
+      - name: Compile
+        run: cargo test --no-run
+      - name: Test
+        run: cargo test -- --nocapture --quiet
 
   clippy_check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - run: rustup component add clippy
+      - name: Cache Dependencies
+        uses: Swatinem/rust-cache@v1
       - uses: actions-rs/clippy-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -39,6 +55,8 @@ jobs:
           toolchain: stable
           components: rustfmt
           override: true
+      - name: Cache Dependencies
+        uses: Swatinem/rust-cache@v1
       - uses: mbrobbel/rustfmt-check@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
