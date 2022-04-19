@@ -6,7 +6,13 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
-
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 10
+  CI: 1
+  RUST_BACKTRACE: short
+  RUSTFLAGS: "-D warnings -W unreachable-pub -W rust-2021-compatibility"
+  RUSTUP_MAX_RETRIES: 10
+  
 jobs:
   build:
     runs-on: ubuntu-latest
