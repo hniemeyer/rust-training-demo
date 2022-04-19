@@ -1,3 +1,5 @@
+use std::fmt;
+
 pub struct Point {
     pub x: f32,
     pub y: f32,
@@ -13,7 +15,13 @@ impl Point {
     }
 
     pub fn distance(&self, other: &Point) -> f32 {
-        ((self.x-other.x).powf(2.0) + (self.y-other.y).powf(2.0)).sqrt()
+        ((self.x - other.x).powf(2.0) + (self.y - other.y).powf(2.0)).sqrt()
+    }
+}
+
+impl fmt::Display for Point {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({}|{})", self.x, self.y)
     }
 }
 
