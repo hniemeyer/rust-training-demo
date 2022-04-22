@@ -7,7 +7,7 @@ pub struct Point {
 }
 
 impl Point {
-    ///Creates a new point. 
+    ///Creates a new point.
     /// ```
     /// let result = geometry::point::Point::new(2.0, 3.0);
     /// assert_eq!(result.x, 2.0);
@@ -26,7 +26,7 @@ impl Point {
         (self.x.powf(2.0) + self.y.powf(2.0)).sqrt()
     }
 
-    /// Calculates the distance to another point. 
+    /// Calculates the distance to another point.
     /// ```
     /// let result = geometry::point::Point::new(2.0, 0.0);
     /// let dist = result.distance(&result);

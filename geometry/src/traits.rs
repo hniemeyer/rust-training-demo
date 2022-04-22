@@ -5,6 +5,6 @@
 pub trait Shape<T> {
     /// Calculate the area of the geometric shape.
     fn area(&self) -> T;
-    /// Calculates the circumference of the geometric shape. 
+    /// Calculates the circumference of the geometric shape.
     fn circumference(&self) -> T;
 }

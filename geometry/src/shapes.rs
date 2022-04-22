@@ -1,6 +1,6 @@
 use crate::point::Point;
 use crate::traits;
-/// A rectangle with a center and a length and a width. 
+/// A rectangle with a center and a length and a width.
 pub struct Rectangle {
     center: Point,
     length: f32,
@@ -21,9 +21,9 @@ impl Rectangle {
         }
     }
 
-    /// Move the center of the rectangle to another point. 
+    /// Move the center of the rectangle to another point.
     /// This is an absolute move which means that the given
-    /// point will be the new center. 
+    /// point will be the new center.
     pub fn move_center(&mut self, point: Point) {
         self.center = point;
     }

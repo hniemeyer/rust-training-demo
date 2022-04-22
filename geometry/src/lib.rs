@@ -1,7 +1,7 @@
 //! # Geometry
 //!
 //! `geometry` is a collection of utilities for performing operations
-//! on geometric objects. 
+//! on geometric objects.
 
 pub mod point;
 pub mod shapes;
