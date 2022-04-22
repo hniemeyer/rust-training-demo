@@ -1,6 +1,6 @@
 use crate::point::Point;
 use crate::traits;
-
+/// A rectangle with a center and a length and a width.
 pub struct Rectangle {
     center: Point,
     length: f32,
@@ -8,6 +8,11 @@ pub struct Rectangle {
 }
 
 impl Rectangle {
+    /// Create a new rectangle from a point (which will be its center)
+    /// and a length and a width.
+    /// ```
+    /// let my_rect = geometry::shapes::Rectangle::new(geometry::point::Point::new(0.0,0.0), 5.0, 2.0);
+    /// ```
     pub fn new(center: Point, length: f32, width: f32) -> Self {
         Rectangle {
             center,
@@ -16,6 +21,9 @@ impl Rectangle {
         }
     }
 
+    /// Move the center of the rectangle to another point.
+    /// This is an absolute move which means that the given
+    /// point will be the new center.
     pub fn move_center(&mut self, point: Point) {
         self.center = point;
     }
