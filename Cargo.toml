@@ -2,5 +2,6 @@
 
 members = [
     "geometry",
-    "application"
+    "application",
+    "patternmatching"
 ]
