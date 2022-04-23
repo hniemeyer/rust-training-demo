@@ -4,6 +4,13 @@ struct MyData {
     z: i32,
 }
 
+enum Command {
+    Start,
+    Stop,
+    Say(String),
+    Donate(i32),
+}
+
 fn main() {
     let my_number = 256;
     match my_number {
@@ -31,4 +38,20 @@ fn main() {
 
     let MyData { x: a, y: b, z: _ } = data;
     println!("{} and {}", a, b);
+
+    let my_commands = vec![
+        Command::Say("Hallo Welt".to_owned()),
+        Command::Start,
+        Command::Stop,
+        Command::Donate(32),
+    ];
+
+    for my_command in &my_commands {
+        match my_command {
+            Command::Start => println!("Process started"),
+            Command::Stop => println!("Process stoped"),
+            Command::Say(x) => println!("You say: {}", x),
+            Command::Donate(y) => println!("Your donation of {} is well received.", y),
+        }
+    }
 }
