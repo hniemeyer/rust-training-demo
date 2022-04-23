@@ -11,6 +11,14 @@ enum Command {
     Donate(i32),
 }
 
+fn get_optional_number(x: i32) -> Option<i32> {
+    if x > 10 {
+        Some(26)
+    } else {
+        None
+    }
+}
+
 fn main() {
     let my_number = 256;
     match my_number {
@@ -53,5 +61,11 @@ fn main() {
             Command::Say(x) => println!("You say: {}", x),
             Command::Donate(y) => println!("Your donation of {} is well received.", y),
         }
+    }
+
+    if let Some(i) = get_optional_number(25) {
+        println!("We got a number: {}", i);
+    } else {
+        println!("Not a number");
     }
 }
