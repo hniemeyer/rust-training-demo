@@ -28,4 +28,7 @@ fn main() {
         MyData { x: _, y: _, z } if z == 3 => println!("z is equal to 3"),
         _ => println!("Something else"),
     }
+
+    let MyData { x: a, y: b, z: _ } = data;
+    println!("{} and {}", a, b);
 }
