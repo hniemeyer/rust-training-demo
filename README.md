@@ -14,10 +14,10 @@ on your machine you can use the [Remote - Containers](https://marketplace.visual
 
 There are two ways to use this extension with this repository:
 
-Clone this repo to your disk, start VS Code, run the Remote-Containers: Open Folder in Container... command from the Command Palette (F1) or quick actions Status bar item, and select the folder where git put this repo (likely the name of the repo i.e. rust-training-demo). 
+Clone this repo to your disk, start VS Code, run the Remote-Containers: Open Folder in Container... command from the Command Palette (F1) or quick actions Status bar item, and select the folder where git put this repo (likely the name of the repo i.e. rust-training-demo).
 
 OR
 
-Start VS Code and run Remote-Containers: Clone Repository in Container Volume... from the Command Palette (F1). Enter https://github.com/hniemeyer/rust-training-demo in the input box that appears and press Enter.
+Start VS Code and run Remote-Containers: Clone Repository in Container Volume... from the Command Palette (F1). Enter <https://github.com/hniemeyer/rust-training-demo> in the input box that appears and press Enter.
 
-This will start a docker container with the code, Rust and appropriate extensions already installed and will open a VS code instance which can interact with the container. 
+This will start a docker container with the code, Rust and appropriate extensions already installed and will open a VS code instance which can interact with the container.
