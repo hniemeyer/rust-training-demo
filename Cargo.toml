@@ -3,5 +3,6 @@
 members = [
     "geometry",
     "application",
-    "patternmatching"
+    "patternmatching",
+    "iterators"
 ]
