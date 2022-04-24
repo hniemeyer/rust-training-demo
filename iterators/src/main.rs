@@ -1,5 +1,3 @@
-use itertools::Itertools;
-
 struct EvenNumbers {
     value: i32,
 }
