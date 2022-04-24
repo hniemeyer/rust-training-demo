@@ -3,7 +3,9 @@ use eyre::Result;
 fn lookup_data(key: &str) -> Result<i32> {
     if key.len() > 8 {
         Err(eyre::eyre!(
-            "Only keys with less than 8 characters allowed."
+            "Only keys with less than 8 characters allowed. Got {} with length {}",
+            key,
+            key.len()
         ))
     } else {
         Ok(key.len() as i32)
