@@ -1,3 +1,5 @@
+use itertools::Itertools;
+
 struct EvenNumbers {
     value: i32,
 }
@@ -25,4 +27,14 @@ fn main() {
         .take(10)
         .collect();
     println!("{:#?}", result);
+
+    let sum = (1..100).fold(0, |acc, x| acc + 2 * x);
+    println!("{}", sum);
+
+    let my_result: i32 = itertools::izip!(EvenNumbers::new(), 1..1000)
+        .map(|x| x.0 + x.1)
+        .take(10)
+        .sum();
+
+    println!("{}", my_result);
 }
