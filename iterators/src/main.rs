@@ -35,4 +35,7 @@ fn main() {
         .sum();
 
     println!("{}", my_result);
+
+    let nums = (1..100).collect::<Vec<i32>>();
+    println!("{}", nums[0]);
 }
