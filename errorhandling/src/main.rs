@@ -10,7 +10,15 @@ fn lookup_data(key: &str) -> Result<i32> {
     }
 }
 
+fn add_unsafe_data(first_key: &str, second_key: &str) -> Result<i32> {
+    let first_data = lookup_data(first_key)?;
+    let second_data = lookup_data(second_key)?;
+    Ok(first_data + second_data)
+}
+
 fn main() {
     let my_data = lookup_data("hallo").expect("Receiving the key did not work.");
     println!("{}", my_data);
+    let my_result = add_unsafe_data("hallo", "xxxxx").expect("addition did not work");
+    println!("{}", my_result);
 }
