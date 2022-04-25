@@ -6,7 +6,7 @@ This repository contains examples for several basic rust topics as a workspace.
 * iterators: Writing your own iterator and using the iterator methods from stdlib and itertools
 * patternmatching: Pattern matching and destructuring
 * errorhandling: Error handling in Rust with the eyre crate
-
+* macros: Example for macros that are not procedural macros
 ## Usage if you dont have Rust installed
 
 You dont need to have Rust installed. If you have Docker and Visual Studio Code
