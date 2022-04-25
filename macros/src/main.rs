@@ -1,3 +1,16 @@
+// These are some of the available designators:
+// block
+// expr is used for expressions
+// ident is used for variable/function names
+// item
+// literal is used for literal constants
+// pat (pattern)
+// path
+// stmt (statement)
+// tt (token tree)
+// ty (type)
+// vis (visibility qualifier)
+
 macro_rules! create_function {
     // This macro takes an argument of designator `ident` and
     // creates a function named `$func_name`.
