@@ -29,3 +29,5 @@ An alternative which does not run on your own computer is opening the repo in <h
 * [Rustling exercixes](https://github.com/rust-lang/rustlings)
 * [Rust book](https://doc.rust-lang.org/book/)
 * [Rust by example](https://doc.rust-lang.org/rust-by-example/)
+* [Rust cookbok](https://rust-lang-nursery.github.io/rust-cookbook/intro.html)
+* 
