@@ -10,6 +10,7 @@
 // tt (token tree)
 // ty (type)
 // vis (visibility qualifier)
+// see: https://doc.rust-lang.org/reference/macros-by-example.html
 
 macro_rules! create_function {
     // This macro takes an argument of designator `ident` and
