@@ -21,3 +21,11 @@ OR
 Start VS Code and run Remote-Containers: Clone Repository in Container Volume... from the Command Palette (F1). Enter <https://github.com/hniemeyer/rust-training-demo> in the input box that appears and press Enter.
 
 This will start a docker container with the code, Rust and appropriate extensions already installed and will open a VS code instance which can interact with the container.
+
+An alternative which does not run on your own computer is opening the repo in <https://gitpod.io>.
+
+## Resources to learn Rust
+
+* [Rustling exercixes](https://github.com/rust-lang/rustlings)
+* [Rust book](https://doc.rust-lang.org/book/)
+* [Rust by example](https://doc.rust-lang.org/rust-by-example/)
