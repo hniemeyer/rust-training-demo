@@ -7,6 +7,8 @@ This repository contains examples for several basic rust topics as a workspace.
 * patternmatching: Pattern matching and destructuring
 * errorhandling: Error handling in Rust with the eyre crate
 * macros: Example for macros that are not procedural macros
+* multithreading: Using threads in Rust
+
 ## Usage if you dont have Rust installed
 
 You dont need to have Rust installed. If you have Docker and Visual Studio Code
@@ -30,4 +32,3 @@ An alternative which does not run on your own computer is opening the repo in <h
 * [Rust book](https://doc.rust-lang.org/book/)
 * [Rust by example](https://doc.rust-lang.org/rust-by-example/)
 * [Rust cookbok](https://rust-lang-nursery.github.io/rust-cookbook/intro.html)
-

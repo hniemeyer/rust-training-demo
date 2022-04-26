@@ -6,5 +6,6 @@ members = [
     "patternmatching",
     "iterators",
     "errorhandling",
-    "macros"
+    "macros",
+    "multithreading"
 ]
