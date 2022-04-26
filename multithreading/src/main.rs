@@ -1,8 +1,13 @@
+use rayon::prelude::*;
 use std::sync::mpsc;
 use std::thread;
 use std::time::Duration;
 
 use rand::Rng;
+
+fn sum_of_squares(input: &[i64]) -> i64 {
+    input.par_iter().map(|&i| 2 * i).sum()
+}
 
 fn main() {
     let mut my_threads = vec![];
@@ -64,4 +69,8 @@ fn main() {
     for received in rx {
         println!("Got: {}", received);
     }
+
+    let v: Vec<i64> = (0..50000).collect();
+    let res = sum_of_squares(&v);
+    println!("Sum is {}", res);
 }
