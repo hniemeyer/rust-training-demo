@@ -1,13 +1,10 @@
 use hdf5::{File, Result};
-use ndarray::{arr2, s, Array2};
+use ndarray::{arr2, s, Array2, Array};
+use ndarray_rand::RandomExt;
+use ndarray_rand::rand_distr::Uniform;
 
 fn write_hdf5() -> Result<()> {
-    let data: Array2<i32> = arr2(&[
-        // write a 2-D array of data
-        [1, 2],
-        [3, 4],
-        [5, 6],
-    ]);
+    let data: Array2<i32> = Array::random((25, 5), Uniform::new(0, 10));
     let file = File::create("pixels.h5")?; // open for writing
     let group = file.create_group("dir")?; // create a group
     let builder = group.new_dataset_builder();
