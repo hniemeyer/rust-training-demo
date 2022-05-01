@@ -11,7 +11,7 @@ fn write_hdf5() -> Result<()> {
     let file = File::create("pixels.h5")?; // open for writing
     let group = file.create_group("dir")?; // create a group
     let builder = group.new_dataset_builder();
-    let ds = builder
+    let _ds = builder
         .with_data(&data)
         // finalize and write the dataset
         .create("pixels")?;
