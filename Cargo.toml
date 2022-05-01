@@ -7,5 +7,6 @@ members = [
     "iterators",
     "errorhandling",
     "macros",
-    "multithreading"
+    "multithreading",
+    "hdfarray"
 ]
