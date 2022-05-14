@@ -26,6 +26,9 @@ This will start a docker container with the code, Rust and appropriate extension
 
 An alternative which does not run on your own computer is opening the repo in <https://gitpod.io>.
 
+The hdf5 example (folder hdfarray) needs an hdf5 installation on your system. For an Ubuntu system `sudo apt-get install libhdf5-dev`
+should install the needed libraries.
+
 ## Resources to learn Rust
 
 * [Rustling exercixes](https://github.com/rust-lang/rustlings)
