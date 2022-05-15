@@ -27,6 +27,8 @@ jobs:
           profile: minimal
           override: true
           components: rustfmt, rust-src
+      - name: Install HDF5
+        run: sudo apt-get install libhdf5-dev
       - name: Cache Dependencies
         uses: Swatinem/rust-cache@v1
       - name: Compile
@@ -39,6 +41,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: rustup component add clippy
+      - name: Install HDF5
+        run: sudo apt-get install libhdf5-dev
       - name: Cache Dependencies
         uses: Swatinem/rust-cache@v1
       - uses: actions-rs/clippy-check@v1
@@ -55,6 +59,8 @@ jobs:
           toolchain: stable
           components: rustfmt
           override: true
+      - name: Install HDF5
+        run: sudo apt-get install libhdf5-dev
       - name: Cache Dependencies
         uses: Swatinem/rust-cache@v1
       - uses: mbrobbel/rustfmt-check@master
