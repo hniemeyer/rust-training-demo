@@ -1,5 +1,5 @@
 use hdf5::{File, Result};
-use ndarray::{arr2, s, Array, Array1, Array2};
+use ndarray::{Array, Array1, Array2};
 use ndarray_rand::rand_distr::Uniform;
 use ndarray_rand::RandomExt;
 
