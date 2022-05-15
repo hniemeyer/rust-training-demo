@@ -21,16 +21,22 @@ fn write_hdf5() -> Result<()> {
     Ok(())
 }
 
-fn read_hdf5() -> Result<()> {
-    let file = File::open("pixels.h5")?; // open for reading
+fn read_and_modify_hdf5() -> Result<()> {
+    let file = File::open_rw("pixels.h5")?; // open for reading
     let ds = file.dataset("sensor/measurement")?; // open the dataset
-    let res: Array2<i32> = ds.read_slice(s![1.., ..])?;
+    let res: Array2<i32> = ds.read()?;
     println!("{}", res);
+    let res2 = 2 * res;
+    let _ds2 = file
+        .group("sensor")?
+        .new_dataset_builder()
+        .with_data(&res2)
+        .create("mod_measurement")?;
     Ok(())
 }
 
 fn main() -> Result<()> {
     write_hdf5()?;
-    read_hdf5()?;
+    read_and_modify_hdf5()?;
     Ok(())
 }
