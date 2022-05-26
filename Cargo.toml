@@ -8,5 +8,6 @@ members = [
     "errorhandling",
     "macros",
     "multithreading",
-    "hdfarray"
+    "hdfarray",
+    "arrays"
 ]
