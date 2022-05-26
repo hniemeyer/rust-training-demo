@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+use std::io;
 
 #[derive(Serialize, Deserialize, Debug)]
 struct InterestingObject {
@@ -42,4 +43,10 @@ fn main() {
     println!("serialized = {}", serialized);
     let serialized_yaml = serde_yaml::to_string(&data).unwrap();
     println!("serialized = {}", serialized_yaml);
+
+    let mut wtr = csv::Writer::from_writer(io::stdout());
+    for item in &data.contents {
+        wtr.serialize(item).unwrap();
+    }
+    wtr.flush().unwrap();
 }
