@@ -1,3 +1,5 @@
+use rayon::iter::{IntoParallelIterator, ParallelIterator};
+
 struct EvenNumbers {
     value: i32,
 }
@@ -38,4 +40,12 @@ fn main() {
 
     let nums = (1..100).collect::<Vec<i32>>();
     println!("{}", nums[0]);
+
+    let parallel_result: i32 = (1..5000)
+        .into_par_iter()
+        .map(|x| 2 * x + 1)
+        .filter(|x| *x > 100)
+        .sum();
+
+    println!("parallel computation: {}", parallel_result);
 }
