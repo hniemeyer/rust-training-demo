@@ -10,5 +10,6 @@ members = [
     "multithreading",
     "hdfarray",
     "arrays",
-    "serialization"
+    "serialization",
+    "smartpointers"
 ]
