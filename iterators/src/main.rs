@@ -1,5 +1,5 @@
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
-use std::time::{Duration, Instant};
+use std::time::Instant;
 
 fn parallel_monte_carlo_pi(points: usize) -> f64 {
     let within_circle = (0..points)
@@ -81,7 +81,7 @@ fn main() {
 
     println!("parallel computation: {}", parallel_result);
 
-    for num_points in [10, 100, 1000, 10000, 100000, 1000000, 1000000] {
+    for num_points in [10, 100, 1000, 10000, 100000, 1000000, 1000000, 10000000] {
         let start = Instant::now();
         let pi_res = parallel_monte_carlo_pi(num_points);
         let duration = start.elapsed();
