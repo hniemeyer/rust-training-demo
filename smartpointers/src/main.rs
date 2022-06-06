@@ -32,13 +32,19 @@ fn main() {
     println!("{}", point_to_val);
 
     //MyList needs a smart pointer inside the option because its size is not known at compile time
-    let my_list = MyList {
+    let _my_list = MyList {
         value: 32,
         next_item: Some(Box::new(MyList {
             value: 45,
             next_item: None,
         })),
     };
+
+    println!(
+        "{}, {}",
+        _my_list.value,
+        _my_list.next_item.expect("should not be None").value
+    );
 
     let mut my_vec = vec![
         MyData { value: 1 },
@@ -52,8 +58,8 @@ fn main() {
     let rc_my_data = Rc::new(MyData { value: 26 });
     println! {"ref count: {}", Rc::strong_count(&rc_my_data)};
     {
-        let x = Rc::clone(&rc_my_data);
-        let y = Rc::clone(&rc_my_data);
+        let _x = Rc::clone(&rc_my_data);
+        let _y = Rc::clone(&rc_my_data);
         println! {"ref count: {}", Rc::strong_count(&rc_my_data)};
     }
 }
